@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>This is AppHome Page</h1>
+    <h2>Author:{{author}}</h2>
+
+    <h2>Age:{{age}}</h2>
+    <h2>Course(this is list of Dictionaries):{{courses}}</h2>
+
+    <h2>List:{{list}}</h2>
+    <h2>Join_List:{{ list | join:' '}}</h2>
+    <h2>Add_Age:{{ age | add:"2"}}</h2>
+    <h2>division:{{ age | divisibleby:"2"}}</h2>
+    <h2>Add_slashes:{{ author | addslashes }}</h2>
+    <h2>return first item:{{ author | first}}</h2>
+    <h2>text with numbers:{{ text_nmbr |linenumbers}}</h2>
+
+    <h2>First_cap_letter:{{ author | capfirst  }}</h2>
+    <h2>Lower:{{ author | lower }}</h2>
+    <h2>Making_Lower:{{ author | make_list }}</h2>
+    <h2>Random items from given list:{{ list | random }}</h2>
+    <h2>Slice of the list:{{ list | slice:':2' }}</h2>
+    <h2>Format_Time:{{ birthday| time:"H:i" }}</h2>
+    <h2>Title:{{ last_name| title}}</h2>
+    <h2>Uppercase:{{ author| upper}}</h2>
+    <h2>Word_count:{{ last_name | wordcount }}</h2>
+    <h2>Short_date_Format:{{ birthday|date:"SHORT_DATE_FORMAT" }}</h2>
+    <h2>Short_date:{{ birthday|date }}</h2>
+    <h2>Dictsort:{{ lst|dictsort:"name" }}</h2>
+    Here’s the syntax to use the escape filter: {{ value | escape }}.
+
+{% comment %} If the value is <p>You are <em>pretty</em> smart!</p>, the output will be <p>You are <em>pretty</em> smart!</p>. Without escaping it, the output will be, “You are pretty smart!”. {% endcomment %}
+
+     
+
+    
+   <h2> linenumbers:{{ list |linenumbers }} </h2>
+   <h2> {{ birthday | date:'D d M Y'}} </h2>
+   <h2>title: {{ last_name | title}} </h2>
+   <h2>Trancatechars: {{ last_name | truncatechars:5}} </h2>
+   <h2>Trancatewords: {{ last_name | truncatewords:1}} </h2>
+<h2>You have {{ age }} message {{ age | pluralize }}.</h2>
+
+
+   <h1>The list_length:{{ list | length }}</h1>
+   {% comment %} <h1>{{'Happy coding. Python is fun.' | truncatewords:2}}</h1> {% endcomment %}
+   <h1>{{"Python is Fun" | cut:" "}}</h1>
+   <h1>{{'Happy coding. Python is fun.' | truncatewords:2}}</h1>
+
+    <!-- Conditional Statement-->
+     {% if  age >= 20 %}
+        <h4>You will get driving license</h4>
+    {% elif age >= 10 and age <= 19 %}
+        <h4>you will not get driving license</h4>
+    {% else %}
+        <h4>You are a child</h4>
+    {% endif %} 
+
+    <!--Loop-->
+    {% for i in courses %}
+    <h4> {{i.id}} {{i.name}}</h4>
+    {% endfor %}
+</body>
+</html>
